@@ -1,4 +1,6 @@
-﻿namespace Epg.Quest
+﻿using Epg.World;
+
+namespace Epg.Quest
 {
     /// <summary>
     /// Quest (adventure).
