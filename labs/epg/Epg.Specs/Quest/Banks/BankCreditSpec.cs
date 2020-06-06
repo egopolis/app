@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using Epg.World;
+using Xunit;
 
 namespace Epg.Quest.Banks
 {
@@ -7,15 +8,15 @@ namespace Epg.Quest.Banks
     /// </summary>
     public class BankCreditSpec
     {
-        private readonly IQuest _quest;
+        private readonly SimpleWorldStorage _world;
 
         public BankCreditSpec()
         {
-            _quest = new QuestEntity
-            {
-                Id = "552176b2-bdc6-4962-96e6-98555d3b3f75",
-                Description = "Defeat The Bank credit"
-            };
+            _world = new SimpleWorldStorage();
+
+            var questMain = _world.Quest("Defeat The Bank credit");
+            var questPayInFull = _world.Quest("Pay credit in full", win: questMain);
+            var questPayInSteps = _world.Quest("Pay credit step-by-step", win: questMain);
         }
 
         /// <summary>

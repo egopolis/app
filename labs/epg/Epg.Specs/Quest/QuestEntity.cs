@@ -4,13 +4,13 @@
         : IQuest
     {
         /// <summary>
-        /// <see cref="IQuest.Id"/> implementation.
-        /// </summary>
-        public string Id { get; set; }
-
-        /// <summary>
         /// <see cref="IQuest.Description"/> implementation.
         /// </summary>
         public string Description { get; set; }
+
+        /// <summary>
+        /// <see cref="IQuest.Win"/> implementation.
+        /// </summary>
+        public string Win { get; set; }
     }
 }
